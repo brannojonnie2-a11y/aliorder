@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.5s ease forwards;
+  }
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  .slide-in-from-right-10 {
+    animation: slideInFromRight 0.5s ease forwards;
+  }
+  @keyframes animateIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+}
