@@ -23,6 +23,11 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
   const originCountry = 'China';
   const destinationCountry = country;
   const destinationCity = city;
+  
+  // Calculate shipped date (15 days ago from today)
+  const shippedDate = new Date();
+  shippedDate.setDate(shippedDate.getDate() - 15);
+  const shippedDateString = shippedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center max-w-md mx-auto relative shadow-xl">
@@ -49,19 +54,19 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         </div>
 
         {/* Tracking Status Card */}
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6 mb-6">
+        <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-300 rounded-2xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
-              <Package className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center">
+              <CheckCircle2 className="w-6 h-6 text-white" />
             </div>
             <div>
               <p className="text-sm text-gray-600">Shipping Status</p>
-              <p className="text-lg font-bold text-[#191919]">In Transit</p>
+              <p className="text-lg font-bold text-[#191919]">Package Arrived</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-sm text-orange-700">
-            <Clock className="w-4 h-4" />
-            <span>Expected delivery in 5-7 business days</span>
+          <div className="flex items-center gap-2 text-sm text-green-700 font-semibold">
+            <Package className="w-4 h-4" />
+            <span>Waiting for home delivery fee payment</span>
           </div>
         </div>
 
@@ -78,7 +83,7 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
             <div className="pt-2 pb-8">
               <p className="text-xs text-gray-500 uppercase font-semibold">Origin</p>
               <p className="text-base font-bold text-[#191919]">{originCountry}</p>
-              <p className="text-sm text-gray-600">Shipped on {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+              <p className="text-sm text-gray-600">Shipped on {shippedDateString}</p>
             </div>
           </div>
 
@@ -101,12 +106,12 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         <div className="bg-gray-50 rounded-xl p-4 mb-8 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm font-semibold text-gray-800">Shipped from warehouse</span>
-            <span className="text-xs text-gray-500">{new Date().toLocaleDateString()}</span>
+            <span className="text-xs text-gray-500">{shippedDateString}</span>
           </div>
-          <div className="h-0.5 bg-gradient-to-r from-green-400 to-orange-400" />
-          <div className="flex items-center justify-between opacity-60">
-            <span className="text-sm text-gray-600">In transit to your country</span>
-            <span className="text-xs text-gray-500">Expected</span>
+          <div className="h-0.5 bg-gradient-to-r from-green-400 to-green-500" />
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-semibold text-green-700">Arrived at destination</span>
+            <span className="text-xs text-green-600 font-semibold">Today</span>
           </div>
         </div>
 
@@ -120,9 +125,12 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         </div>
 
         {/* Delivery Fee Notice */}
-        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-start gap-3 mb-8">
-          <span className="text-orange-500 text-xl leading-none mt-0.5">🚚</span>
-          <p className="text-sm text-orange-800 font-medium leading-snug">Additional delivery fees may apply based on your location</p>
+        <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 flex items-start gap-3 mb-8">
+          <span className="text-red-600 text-xl leading-none mt-0.5">⚠️</span>
+          <div>
+            <p className="text-sm font-bold text-red-700 mb-1">Action Required</p>
+            <p className="text-sm text-red-700 font-medium leading-snug">Your package has arrived! Please pay the home delivery fee to complete the delivery to your doorstep.</p>
+          </div>
         </div>
       </div>
 
