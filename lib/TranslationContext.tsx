@@ -35,7 +35,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode; country?
   }, [country]);
 
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || translations.en[key] || key;
+    return (translations[language] as Record<TranslationKey, string>)[key] || (translations.en as Record<TranslationKey, string>)[key] || key;
   };
 
   return (
