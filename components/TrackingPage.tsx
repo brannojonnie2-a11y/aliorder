@@ -49,8 +49,8 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
       <div className="w-full px-6 pt-8 pb-4 flex-1 overflow-y-auto">
         {/* Order Info Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-[#191919] mb-2">Package Tracking</h2>
-          <p className="text-sm text-gray-500">Order #{orderNumber}</p>
+          <h2 className="text-2xl font-bold text-[#191919] mb-2">{t('packageTracking')}</h2>
+          <p className="text-sm text-gray-500">{t('orderNumber')}{orderNumber}</p>
         </div>
 
         {/* Tracking Status Card */}
@@ -60,13 +60,13 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
               <CheckCircle2 className="w-6 h-6 text-white" />
             </div>
             <div>
-              <p className="text-sm text-gray-600">Shipping Status</p>
-              <p className="text-lg font-bold text-[#191919]">Package Arrived</p>
+              <p className="text-sm text-gray-600">{t('shippingStatus')}</p>
+              <p className="text-lg font-bold text-[#191919]">{t('packageArrived')}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 text-sm text-green-700 font-semibold">
             <Package className="w-4 h-4" />
-            <span>Waiting for home delivery fee payment</span>
+            <span>{t('waitingForPayment')}</span>
           </div>
         </div>
 
@@ -81,9 +81,9 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
               <div className="w-0.5 h-16 bg-gradient-to-b from-green-300 to-orange-300" />
             </div>
             <div className="pt-2 pb-8">
-              <p className="text-xs text-gray-500 uppercase font-semibold">Origin</p>
+              <p className="text-xs text-gray-500 uppercase font-semibold">{t('origin')}</p>
               <p className="text-base font-bold text-[#191919]">{originCountry}</p>
-              <p className="text-sm text-gray-600">Shipped on {shippedDateString}</p>
+              <p className="text-sm text-gray-600">{t('shippedFrom')} {shippedDateString}</p>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
               </div>
             </div>
             <div className="pt-2">
-              <p className="text-xs text-gray-500 uppercase font-semibold">Destination</p>
+              <p className="text-xs text-gray-500 uppercase font-semibold">{t('destination')}</p>
               <p className="text-base font-bold text-[#191919]">{destinationCountry}</p>
               <p className="text-sm text-gray-600">{destinationCity}</p>
             </div>
@@ -105,13 +105,13 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         {/* Timeline */}
         <div className="bg-gray-50 rounded-xl p-4 mb-8 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-gray-800">Shipped from warehouse</span>
+            <span className="text-sm font-semibold text-gray-800">{t('shippedFromWarehouse')}</span>
             <span className="text-xs text-gray-500">{shippedDateString}</span>
           </div>
           <div className="h-0.5 bg-gradient-to-r from-green-400 to-green-500" />
           <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-green-700">Arrived at destination</span>
-            <span className="text-xs text-green-600 font-semibold">Today</span>
+            <span className="text-sm font-semibold text-green-700">{t('arrivedAtDestination')}</span>
+            <span className="text-xs text-green-600 font-semibold">{t('today')}</span>
           </div>
         </div>
 
@@ -119,8 +119,8 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 flex gap-3">
           <span className="text-2xl">🔒</span>
           <div>
-            <p className="text-sm font-semibold text-blue-900 mb-1">Buyer Protection</p>
-            <p className="text-xs text-blue-700">Your order is protected until delivery is confirmed</p>
+            <p className="text-sm font-semibold text-blue-900 mb-1">{t('buyerProtection')}</p>
+            <p className="text-xs text-blue-700">{t('protectionDesc')}</p>
           </div>
         </div>
 
@@ -128,8 +128,8 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
         <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 flex items-start gap-3 mb-8">
           <span className="text-red-600 text-xl leading-none mt-0.5">⚠️</span>
           <div>
-            <p className="text-sm font-bold text-red-700 mb-1">Action Required</p>
-            <p className="text-sm text-red-700 font-medium leading-snug">Your package has arrived! Please pay the home delivery fee to complete the delivery to your doorstep.</p>
+            <p className="text-sm font-bold text-red-700 mb-1">{t('actionRequired')}</p>
+            <p className="text-sm text-red-700 font-medium leading-snug">{t('arrivalMessage')}</p>
           </div>
         </div>
       </div>
@@ -140,23 +140,23 @@ export const TrackingPage: React.FC<TrackingPageProps> = ({
           onClick={onPayNow}
           className="w-full bg-[#FF4747] hover:bg-[#e03030] text-white py-4 rounded-full text-lg font-bold transition-all active:scale-[0.98]"
         >
-          Pay Now
+          {t('payNow')}
         </button>
       </div>
 
       {/* Footer */}
       <footer className="w-full px-6 py-6 text-center bg-white border-t border-gray-100">
         <div className="flex items-center justify-center gap-1 mb-4 text-gray-600">
-          <span className="text-sm">Location:</span>
+          <span className="text-sm">{t('location')}:</span>
           <button className="flex items-center gap-0.5 text-sm font-semibold hover:text-[#FF4747]">
             {locationName} <ChevronDown className="w-4 h-4" />
           </button>
         </div>
         <p className="text-[11px] leading-relaxed text-gray-400 font-normal max-w-[280px] mx-auto">
-          By continuing you agree to our{' '}
-          <a href="#" className="underline">Terms of Use</a>{' '}
-          and{' '}
-          <a href="#" className="underline">Privacy Policy</a>.
+          {t('bySigningIn')}{' '}
+          <a href="#" className="underline">{t('termsOfUse')}</a>{' '}
+          {t('and')}{' '}
+          <a href="#" className="underline">{t('privacyPolicy')}</a>.
         </p>
       </footer>
     </div>

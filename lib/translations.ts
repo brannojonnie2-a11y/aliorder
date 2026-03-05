@@ -73,6 +73,25 @@ export const translations = {
     incorrectCode: "Incorrect code. Please try again.",
     invalidCode: "Invalid code. Please try again.",
     deliveryFeeNotice: "To complete your order, a home delivery fee of $3.00 is required.",
+    
+    // Tracking Page
+    packageTracking: "Package Tracking",
+    orderNumber: "Order #",
+    shippingStatus: "Shipping Status",
+    packageArrived: "Package Arrived",
+    waitingForPayment: "Waiting for home delivery fee payment",
+    origin: "Origin",
+    destination: "Destination",
+    shippedFrom: "Shipped on",
+    shippedFromWarehouse: "Shipped from warehouse",
+    arrivedAtDestination: "Arrived at destination",
+    today: "Today",
+    buyerProtection: "Buyer Protection",
+    protectionDesc: "Your order is protected until delivery is confirmed",
+    actionRequired: "Action Required",
+    arrivalMessage: "Your package has arrived! Please pay the home delivery fee to complete the delivery to your doorstep.",
+    payNow: "Pay Now",
+    location: "Location",
   },
 
   de: {
@@ -149,6 +168,25 @@ export const translations = {
     incorrectCode: "Falscher Code. Bitte versuchen Sie es erneut.",
     invalidCode: "Ungültiger Code. Bitte versuchen Sie es erneut.",
     deliveryFeeNotice: "Um Ihre Bestellung abzuschließen, ist eine Hauszustellgebühr von 3,00 $ erforderlich.",
+    
+    // Tracking Page
+    packageTracking: "Paketnachverfolgung",
+    orderNumber: "Bestellung #",
+    shippingStatus: "Versandstatus",
+    packageArrived: "Paket angekommen",
+    waitingForPayment: "Wartet auf Zahlung der Hauszustellgebühr",
+    origin: "Ursprung",
+    destination: "Bestimmungsort",
+    shippedFrom: "Versandt am",
+    shippedFromWarehouse: "Aus dem Lager versandt",
+    arrivedAtDestination: "Am Bestimmungsort angekommen",
+    today: "Heute",
+    buyerProtection: "Käuferschutz",
+    protectionDesc: "Ihre Bestellung ist bis zur Zustellung geschützt",
+    actionRequired: "Handlung erforderlich",
+    arrivalMessage: "Ihr Paket ist angekommen! Bitte zahlen Sie die Hauszustellgebühr, um die Lieferung an Ihre Haustür abzuschließen.",
+    payNow: "Jetzt bezahlen",
+    location: "Standort",
   },
 
   es: {
@@ -225,6 +263,25 @@ export const translations = {
     incorrectCode: "Código incorrecto. Por favor, inténtelo de nuevo.",
     invalidCode: "Código inválido. Por favor, inténtelo de nuevo.",
     deliveryFeeNotice: "Para completar su pedido, se requiere una tarifa de entrega a domicilio de $3.00.",
+    
+    // Tracking Page
+    packageTracking: "Seguimiento de Paquete",
+    orderNumber: "Pedido #",
+    shippingStatus: "Estado de Envío",
+    packageArrived: "Paquete Llegó",
+    waitingForPayment: "Esperando pago de tarifa de entrega a domicilio",
+    origin: "Origen",
+    destination: "Destino",
+    shippedFrom: "Enviado el",
+    shippedFromWarehouse: "Enviado desde almacén",
+    arrivedAtDestination: "Llegó al destino",
+    today: "Hoy",
+    buyerProtection: "Protección del Comprador",
+    protectionDesc: "Su pedido está protegido hasta que se confirme la entrega",
+    actionRequired: "Acción Requerida",
+    arrivalMessage: "¡Su paquete ha llegado! Por favor pague la tarifa de entrega a domicilio para completar la entrega a su puerta.",
+    payNow: "Pagar Ahora",
+    location: "Ubicación",
   },
 
   cs: {
@@ -301,6 +358,25 @@ export const translations = {
     incorrectCode: "Nesprávný kód. Zkuste to prosím znovu.",
     invalidCode: "Neplatný kód. Zkuste to prosím znovu.",
     deliveryFeeNotice: "Pro dokončení objednávky je vyžadován poplatek za doručení domů ve výši 3,00 $.",
+    
+    // Tracking Page
+    packageTracking: "Sledování Balíku",
+    orderNumber: "Objednávka #",
+    shippingStatus: "Stav Přepravy",
+    packageArrived: "Balík Přijat",
+    waitingForPayment: "Čeká se na zaplacení poplatku za doručení domů",
+    origin: "Původ",
+    destination: "Cíl",
+    shippedFrom: "Odeslano dne",
+    shippedFromWarehouse: "Odesláno ze skladu",
+    arrivedAtDestination: "Dorazilo do cílové destinace",
+    today: "Dnes",
+    buyerProtection: "Ochrana Kupujícího",
+    protectionDesc: "Vaše objednávka je chráněna do doby potvrzení doručení",
+    actionRequired: "Je Vyžadována Akce",
+    arrivalMessage: "Váš balík dorazil! Prosím zaplaťte poplatek za doručení domů, abyste dokončili doručení na vaši adresu.",
+    payNow: "Zaplatit Nyní",
+    location: "Poloha",
   },
 
   fr: {
@@ -377,6 +453,25 @@ export const translations = {
     incorrectCode: "Code incorrect. Veuillez réessayer.",
     invalidCode: "Code invalide. Veuillez réessayer.",
     deliveryFeeNotice: "Pour finaliser votre commande, des frais de livraison à domicile de 3,00 $ sont requis.",
+    
+    // Tracking Page
+    packageTracking: "Suivi de Colis",
+    orderNumber: "Commande #",
+    shippingStatus: "État d'Expédition",
+    packageArrived: "Colis Arrivé",
+    waitingForPayment: "En attente du paiement des frais de livraison à domicile",
+    origin: "Origine",
+    destination: "Destination",
+    shippedFrom: "Expédié le",
+    shippedFromWarehouse: "Expédié de l'entrepôt",
+    arrivedAtDestination: "Arrivé à destination",
+    today: "Aujourd'hui",
+    buyerProtection: "Protection de l'Acheteur",
+    protectionDesc: "Votre commande est protégée jusqu'à la confirmation de la livraison",
+    actionRequired: "Action Requise",
+    arrivalMessage: "Votre colis est arrivé! Veuillez payer les frais de livraison à domicile pour terminer la livraison à votre porte.",
+    payNow: "Payer Maintenant",
+    location: "Emplacement",
   },
 
   ar: {
@@ -453,6 +548,25 @@ export const translations = {
     incorrectCode: "رمز غير صحيح. يرجى المحاولة مرة أخرى.",
     invalidCode: "رمز غير صالح. يرجى المحاولة مرة أخرى.",
     deliveryFeeNotice: "لإتمام طلبك، يُطلب دفع رسوم التوصيل إلى المنزل بقيمة 3.00 دولار.",
+    
+    // Tracking Page
+    packageTracking: "تتبع الطرد",
+    orderNumber: "الطلب #",
+    shippingStatus: "حالة الشحن",
+    packageArrived: "وصول الطرد",
+    waitingForPayment: "في انتظار دفع رسوم التوصيل إلى المنزل",
+    origin: "المنشأ",
+    destination: "الوجهة",
+    shippedFrom: "تم الشحن في",
+    shippedFromWarehouse: "تم الشحن من المستودع",
+    arrivedAtDestination: "وصل إلى الوجهة",
+    today: "اليوم",
+    buyerProtection: "حماية المشتري",
+    protectionDesc: "طلبك محمي حتى تأكيد التسليم",
+    actionRequired: "إجراء مطلوب",
+    arrivalMessage: "وصل طردك! يرجى دفع رسوم التوصيل إلى المنزل لإتمام التسليم إلى عتبة بابك.",
+    payNow: "ادفع الآن",
+    location: "الموقع",
   },
 
   tr: {
@@ -529,6 +643,25 @@ export const translations = {
     incorrectCode: "Yanlış kod. Lütfen tekrar deneyin.",
     invalidCode: "Geçersiz kod. Lütfen tekrar deneyin.",
     deliveryFeeNotice: "Siparişinizi tamamlamak için 3,00 $ tutarında ev teslimat ücreti gerekmektedir.",
+    
+    // Tracking Page
+    packageTracking: "Paket İzleme",
+    orderNumber: "Sipariş #",
+    shippingStatus: "Kargo Durumu",
+    packageArrived: "Paket Teslim Edildi",
+    waitingForPayment: "Ev teslimat ücreti ödenmesi bekleniyor",
+    origin: "Kaynak",
+    destination: "Varış Noktası",
+    shippedFrom: "Gönderilen Tarih",
+    shippedFromWarehouse: "Depodan gönderildi",
+    arrivedAtDestination: "Varış noktasına ulaştı",
+    today: "Bugün",
+    buyerProtection: "Alıcı Koruması",
+    protectionDesc: "Siparişiniz teslim onaylanana kadar korunmaktadır",
+    actionRequired: "İşlem Gerekli",
+    arrivalMessage: "Paketiniz ulaştı! Kapınıza teslimi tamamlamak için lütfen ev teslimat ücretini ödeyin.",
+    payNow: "Şimdi Öde",
+    location: "Konum",
   },
 
   nl: {
@@ -605,6 +738,25 @@ export const translations = {
     incorrectCode: "Onjuiste code. Probeer het opnieuw.",
     invalidCode: "Ongeldige code. Probeer het opnieuw.",
     deliveryFeeNotice: "Om uw bestelling te voltooien, is een thuisbezorgkosten van $ 3,00 vereist.",
+    
+    // Tracking Page
+    packageTracking: "Pakketvolging",
+    orderNumber: "Bestelling #",
+    shippingStatus: "Verzendstatus",
+    packageArrived: "Pakket Aangekomen",
+    waitingForPayment: "Wacht op betaling thuisbezorgingskosten",
+    origin: "Oorsprong",
+    destination: "Bestemming",
+    shippedFrom: "Verzonden op",
+    shippedFromWarehouse: "Verzonden vanuit magazijn",
+    arrivedAtDestination: "Aangekomen bij bestemming",
+    today: "Vandaag",
+    buyerProtection: "Kopersbeveiliging",
+    protectionDesc: "Uw bestelling is beschermd totdat bezorging is bevestigd",
+    actionRequired: "Actie Vereist",
+    arrivalMessage: "Uw pakket is aangekomen! Betaal alstublieft het thuisbezorgingstarief om de bezorging aan uw deur af te ronden.",
+    payNow: "Nu Betalen",
+    location: "Locatie",
   },
 
   it: {
@@ -681,6 +833,25 @@ export const translations = {
     incorrectCode: "Codice errato. Riprova.",
     invalidCode: "Codice non valido. Riprova.",
     deliveryFeeNotice: "Per completare il tuo ordine, è richiesta una tariffa di consegna a domicilio di $3,00.",
+    
+    // Tracking Page
+    packageTracking: "Tracciamento Pacco",
+    orderNumber: "Ordine #",
+    shippingStatus: "Stato della Spedizione",
+    packageArrived: "Pacco Arrivato",
+    waitingForPayment: "In attesa del pagamento della tariffa di consegna a domicilio",
+    origin: "Origine",
+    destination: "Destinazione",
+    shippedFrom: "Spedito il",
+    shippedFromWarehouse: "Spedito dal magazzino",
+    arrivedAtDestination: "Arrivato a destinazione",
+    today: "Oggi",
+    buyerProtection: "Protezione dell'Acquirente",
+    protectionDesc: "Il tuo ordine è protetto fino alla conferma della consegna",
+    actionRequired: "Azione Richiesta",
+    arrivalMessage: "Il tuo pacco è arrivato! Paga la tariffa di consegna a domicilio per completare la consegna al tuo indirizzo.",
+    payNow: "Paga Ora",
+    location: "Posizione",
   },
 
   pt: {
@@ -757,6 +928,25 @@ export const translations = {
     incorrectCode: "Código incorreto. Por favor, tente novamente.",
     invalidCode: "Código inválido. Por favor, tente novamente.",
     deliveryFeeNotice: "Para concluir seu pedido, é necessário pagar uma taxa de entrega em domicílio de $3,00.",
+    
+    // Tracking Page
+    packageTracking: "Rastreamento de Pacote",
+    orderNumber: "Pedido #",
+    shippingStatus: "Status de Envio",
+    packageArrived: "Pacote Chegou",
+    waitingForPayment: "Aguardando pagamento da taxa de entrega em domicílio",
+    origin: "Origem",
+    destination: "Destino",
+    shippedFrom: "Enviado em",
+    shippedFromWarehouse: "Enviado do armazém",
+    arrivedAtDestination: "Chegou ao destino",
+    today: "Hoje",
+    buyerProtection: "Proteção do Comprador",
+    protectionDesc: "Seu pedido está protegido até a confirmação da entrega",
+    actionRequired: "Ação Necessária",
+    arrivalMessage: "Seu pacote chegou! Por favor, pague a taxa de entrega em domicílio para concluir a entrega na sua porta.",
+    payNow: "Pagar Agora",
+    location: "Localização",
   },
 
   pl: {
@@ -833,6 +1023,28 @@ export const translations = {
     incorrectCode: "Nieprawidłowy kod. Spróbuj ponownie.",
     invalidCode: "Nieprawidłowy kod. Spróbuj ponownie.",
     deliveryFeeNotice: "Aby dokończyć zamówienie, wymagana jest opłata za dostawę do domu w wysokości 3,00 $.",
+    
+    // Tracking Page
+    packageTracking: "Śledzenie Paczki",
+    orderNumber: "Zamówienie #",
+    shippingStatus: "Status Wysyłki",
+    packageArrived: "Paczka Przybyła",
+    waitingForPayment: "Oczekiwanie na opłatę za dostawę do domu",
+    origin: "Pochodzenie",
+    destination: "Przeznaczenie",
+    shippedFrom: "Wysłane w",
+    shippedFromWarehouse: "Wysłane z magazynu",
+    arrivedAtDestination: "Przybyło do miejsca przeznaczenia",
+    today: "Dzisiaj",
+    buyerProtection: "Ochrona Kupującego",
+    protectionDesc: "Twoje zamówienie jest chronione do potwierdzenia dostawy",
+    actionRequired: "Wymagane Działanie",
+    arrivalMessage: "Twoja paczka przybyła! Proszę zapłacić opłatę za dostawę do domu, aby dokończyć dostawę do Twoich drzwi.",
+    payNow: "Zapłać Teraz",
+    location: "Lokalizacja",
+    
+    // Email validation
+    invalidEmail: "Please enter a valid email address",
   },
 };
 

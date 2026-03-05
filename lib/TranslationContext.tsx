@@ -14,10 +14,24 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode; country?
   const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
+    // Fast language detection from multiple sources
+    let detectedLang: Language = 'en';
+    
+    // 1. Try to detect from country (fastest)
     if (country) {
-      const detectedLang = getLanguageFromCountry(country);
-      setLanguage(detectedLang);
+      detectedLang = getLanguageFromCountry(country);
+    } else {
+      // 2. Try to detect from browser navigator language
+      if (typeof navigator !== 'undefined' && navigator.language) {
+        const browserLang = navigator.language.split('-')[0].toLowerCase();
+        const langKeys = Object.keys(translations) as Language[];
+        if (langKeys.includes(browserLang as Language)) {
+          detectedLang = browserLang as Language;
+        }
+      }
     }
+    
+    setLanguage(detectedLang);
   }, [country]);
 
   const t = (key: TranslationKey): string => {
